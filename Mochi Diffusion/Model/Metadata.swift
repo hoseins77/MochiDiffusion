@@ -18,4 +18,5 @@ enum Metadata: String, CaseIterable {
     case guidanceScale = "Guidance Scale"
     case generator = "Generator"
     case upscaler = "Upscaler"
+    case faceRestorationModel = "Face Restoration Model"
 }

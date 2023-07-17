@@ -92,6 +92,17 @@ struct GalleryToolbarView: View {
                 .help("Convert to High Resolution")
             }
 
+            Button {
+                Task { await ImageController.shared.restoreFacesOnCurrentImage() }
+            } label: {
+                Label {
+                    Text("Restore Faces")
+                } icon: {
+                    Image(systemName: "person.crop.square")
+                }
+                .help("Restore Faces")
+            }
+
             Spacer()
 
             Button {
@@ -153,6 +164,18 @@ struct GalleryToolbarView: View {
             } icon: {
                 Image(systemName: "wand.and.stars")
             }
+        }
+        .disabled(true)
+
+        Button {
+            // noop
+        } label: {
+            Label {
+                Text("Restore Faces")
+            } icon: {
+                Image(systemName: "person.crop.square")
+            }
+            .help("Restore Faces")
         }
         .disabled(true)
 

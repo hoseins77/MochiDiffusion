@@ -301,9 +301,31 @@ final class ImageController: ObservableObject {
         }
     }
 
+    func restoreFaces(_ sdi: SDImage) async {
+        if !sdi.faceRestorationModel.isEmpty { return }
+
+        /// Set upscaling animation
+        var upscalingSDI = sdi
+        upscalingSDI.isUpscaling = true
+        ImageStore.shared.update(upscalingSDI)
+
+        async let maybeSDI = FaceRestorer.shared.restoreFace(sdi: sdi)
+        guard let restoredSDI = await maybeSDI else { return }
+        ImageStore.shared.update(restoredSDI)
+        /// If Quick Look is already open show selected image
+        if quicklookId != nil {
+            quicklookId = restoredSDI.id
+        }
+    }
+
     func upscaleCurrentImage() async {
         guard let sdi = ImageStore.shared.selected() else { return }
         await upscale(sdi)
+    }
+
+    func restoreFacesOnCurrentImage() async {
+        guard let sdi = ImageStore.shared.selected() else { return }
+        await restoreFaces(sdi)
     }
 
     func quicklookCurrentImage() async {

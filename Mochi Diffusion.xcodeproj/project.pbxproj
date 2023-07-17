@@ -53,6 +53,8 @@
 		03FD2319295F74B6006EEEE2 /* RealESRGAN.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 03FD2318295F74B6006EEEE2 /* RealESRGAN.mlmodel */; };
 		03FD231B295F7A81006EEEE2 /* Upscaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD231A295F7A81006EEEE2 /* Upscaler.swift */; };
 		58FF218829FAE96200A70C7C /* ControlNetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FF218729FAE96200A70C7C /* ControlNetView.swift */; };
+		946237CC2A65CE370034F465 /* gfpgan.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 946237CB2A65CE370034F465 /* gfpgan.mlmodel */; };
+		946237CE2A65CF870034F465 /* FaceRestorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946237CD2A65CF870034F465 /* FaceRestorer.swift */; };
 		9B7392C3298DEAC2006F03D5 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7392C2298DEAC2006F03D5 /* Tokenizer.swift */; };
 		D7B03F2029D42F9900DF89DD /* SDModelAttentionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B03F1F29D42F9900DF89DD /* SDModelAttentionType.swift */; };
 /* End PBXBuildFile section */
@@ -114,6 +116,8 @@
 		03FD2318295F74B6006EEEE2 /* RealESRGAN.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = RealESRGAN.mlmodel; sourceTree = "<group>"; };
 		03FD231A295F7A81006EEEE2 /* Upscaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upscaler.swift; sourceTree = "<group>"; };
 		58FF218729FAE96200A70C7C /* ControlNetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlNetView.swift; sourceTree = "<group>"; };
+		946237CB2A65CE370034F465 /* gfpgan.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = gfpgan.mlmodel; sourceTree = "<group>"; };
+		946237CD2A65CF870034F465 /* FaceRestorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceRestorer.swift; sourceTree = "<group>"; };
 		9B7392C2298DEAC2006F03D5 /* Tokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
 		D7B03F1F29D42F9900DF89DD /* SDModelAttentionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDModelAttentionType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +160,7 @@
 				03173C102999D83600B03456 /* ImageGenerator.swift */,
 				9B7392C2298DEAC2006F03D5 /* Tokenizer.swift */,
 				03FD231A295F7A81006EEEE2 /* Upscaler.swift */,
+				946237CD2A65CF870034F465 /* FaceRestorer.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				036BFC25294B9F7600D8AD04 /* Assets.xcassets */,
+				946237CB2A65CE370034F465 /* gfpgan.mlmodel */,
 				03FD2318295F74B6006EEEE2 /* RealESRGAN.mlmodel */,
 			);
 			path = Resources;
@@ -425,6 +431,7 @@
 				03CB9D18297399AE0041A4FA /* ImageCommands.swift in Sources */,
 				035E76F62970E809008DDFDE /* CVPixelBuffer+Create.swift in Sources */,
 				03173C112999D83600B03456 /* ImageGenerator.swift in Sources */,
+				946237CE2A65CF870034F465 /* FaceRestorer.swift in Sources */,
 				0311C69929899A660074BCAE /* Metadata.swift in Sources */,
 				03D43B7829660A1300604911 /* GalleryView.swift in Sources */,
 				03D43B7A29660A2600604911 /* GalleryItemView.swift in Sources */,
@@ -435,6 +442,7 @@
 				03173C152999F5C700B03456 /* ImageController.swift in Sources */,
 				036BFC22294B9F7500D8AD04 /* App.swift in Sources */,
 				03EA52CE297B66C800CDF661 /* SidebarView.swift in Sources */,
+				946237CC2A65CE370034F465 /* gfpgan.mlmodel in Sources */,
 				9B7392C3298DEAC2006F03D5 /* Tokenizer.swift in Sources */,
 				035EDFFE295A220F00080D18 /* SeedView.swift in Sources */,
 				0307B0DA294D4AE500A9BD55 /* FileCommands.swift in Sources */,

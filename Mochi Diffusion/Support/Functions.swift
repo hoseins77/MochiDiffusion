@@ -57,6 +57,8 @@ func createSDImageFromURL(_ url: URL) -> SDImage? {
             sdi.guidanceScale = Double(value)!
         case Metadata.upscaler:
             sdi.upscaler = String(value)
+        case Metadata.faceRestorationModel:
+            sdi.faceRestorationModel = String(value)
         case Metadata.scheduler:
             sdi.scheduler = Scheduler(rawValue: String(value))!
         case Metadata.mlComputeUnit:

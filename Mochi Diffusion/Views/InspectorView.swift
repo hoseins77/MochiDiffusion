@@ -69,11 +69,20 @@ struct InspectorView: View {
                             text: sdi.model,
                             showCopyToPromptOption: false
                         )
-                        InfoGridRow(
-                            type: LocalizedStringKey(Metadata.size.rawValue),
-                            text: "\(sdi.width) x \(sdi.height)\(!sdi.upscaler.isEmpty ? " (Upscaled using \(sdi.upscaler))" : "")",
-                            showCopyToPromptOption: false
-                        )
+                        Group {
+                            InfoGridRow(
+                                type: LocalizedStringKey(Metadata.size.rawValue),
+                                text: "\(sdi.width) x \(sdi.height)\(!sdi.upscaler.isEmpty ? " (Upscaled using \(sdi.upscaler))" : "")",
+                                showCopyToPromptOption: false
+                            )
+                            if !sdi.faceRestorationModel.isEmpty {
+                                InfoGridRow(
+                                    type: LocalizedStringKey(Metadata.faceRestorationModel.rawValue),
+                                    text: "Face Restored using \(sdi.faceRestorationModel)",
+                                    showCopyToPromptOption: false
+                                )
+                            }
+                        }
                         InfoGridRow(
                             type: LocalizedStringKey(Metadata.includeInImage.rawValue),
                             text: sdi.prompt,

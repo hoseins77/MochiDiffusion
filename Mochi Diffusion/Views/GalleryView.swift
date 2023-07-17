@@ -132,6 +132,19 @@ struct GalleryView: View {
                     }
                 }
             }
+
+            if sdi.faceRestorationModel.isEmpty {
+                Section {
+                    Button {
+                        Task { await ImageController.shared.restoreFaces(sdi) }
+                    } label: {
+                        Text(
+                            "Restore Faces",
+                            comment: "Restore Faces"
+                        )
+                    }
+                }
+            }
             Section {
                 Button {
                     Task { await sdi.saveAs() }

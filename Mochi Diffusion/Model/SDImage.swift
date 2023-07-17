@@ -28,6 +28,7 @@ struct SDImage: Identifiable, Hashable {
     var guidanceScale = 11.0
     var generatedDate = Date()
     var upscaler = ""
+    var faceRestorationModel = ""
     var isUpscaling = false
     var path = ""
 
@@ -137,6 +138,8 @@ extension SDImage {
         +
         (!upscaler.isEmpty ? " \(Metadata.upscaler.rawValue): \(upscaler); " : " ")
         +
+        (!faceRestorationModel.isEmpty ? " \(Metadata.faceRestorationModel.rawValue): \(faceRestorationModel); " : " ")
+        +
         """
         \(Metadata.scheduler.rawValue): \(scheduler.rawValue); \
         \(Metadata.mlComputeUnit.rawValue): \(MLComputeUnits.toString(mlComputeUnit)); \
@@ -154,6 +157,9 @@ extension SDImage {
 
 \(Metadata.size.rawValue):
 \(width) x \(height)\(!upscaler.isEmpty ? " (Upscaled using \(upscaler))" : "")
+
+\(Metadata.faceRestorationModel.rawValue):
+\(!faceRestorationModel.isEmpty ? "Face Restored using \(faceRestorationModel)" : "")
 
 \(Metadata.includeInImage.rawValue):
 \(prompt)
